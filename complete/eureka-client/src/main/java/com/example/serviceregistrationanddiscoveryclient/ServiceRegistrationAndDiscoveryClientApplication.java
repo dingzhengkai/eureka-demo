@@ -1,6 +1,6 @@
 package com.example.serviceregistrationanddiscoveryclient;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import de.codecentric.boot.admin.server.config.EnableAdminServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.ServiceInstance;
@@ -16,20 +16,28 @@ import java.util.List;
 @SpringBootApplication
 public class ServiceRegistrationAndDiscoveryClientApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ServiceRegistrationAndDiscoveryClientApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ServiceRegistrationAndDiscoveryClientApplication.class, args);
+    }
 }
 
 @RestController
 class ServiceInstanceRestController {
 
-	@Autowired
-	private DiscoveryClient discoveryClient;
+    private final DiscoveryClient discoveryClient;
 
-	@RequestMapping("/service-instances/{applicationName}")
-	public List<ServiceInstance> serviceInstancesByApplicationName(
-			@PathVariable String applicationName) {
-		return this.discoveryClient.getInstances(applicationName);
-	}
+    public ServiceInstanceRestController(DiscoveryClient discoveryClient) {
+        this.discoveryClient = discoveryClient;
+    }
+
+    @RequestMapping("/")
+    public String echoHello() {
+        return "Hello";
+    }
+
+    @RequestMapping("/service-instances/{applicationName}")
+    public List<ServiceInstance> serviceInstancesByApplicationName(
+            @PathVariable String applicationName) {
+        return this.discoveryClient.getInstances(applicationName);
+    }
 }

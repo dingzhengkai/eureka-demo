@@ -1,0 +1,26 @@
+#server.port=8761
+#
+#eureka.client.register-with-eureka=false
+#eureka.client.fetch-registry=false
+#
+#logging.level.com.netflix.eureka=INFO
+#logging.level.com.netflix.discovery=INFO
+
+# 本机调试，单节点，心跳
+#eureka.server.renewalPercentThreshold=0.4
+
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: xstack-eureka-center
+    appname: eureka注册中心
+  client:
+    registerWithEureka: false # 单点的时候设置为 false 禁止注册自身
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+  server:
+    enableSelfPreservation: true
+    renewalPercentThreshold: 0.4
+#    evictionIntervalTimerInMs: 4000
