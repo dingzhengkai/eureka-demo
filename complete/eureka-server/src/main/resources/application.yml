@@ -19,8 +19,23 @@ eureka:
     registerWithEureka: false # 单点的时候设置为 false 禁止注册自身
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://test:123456@localhost:8761/eureka/
   server:
-    enableSelfPreservation: true
+    enableSelfPreservation: true # 是否关闭自我保护模式
     renewalPercentThreshold: 0.4
 #    evictionIntervalTimerInMs: 4000
+spring:
+  application:
+    name: xstack-eureka-center
+  cloud:
+    inetutils: ## 网卡设置
+      ignoredInterfaces:  ## 忽略的网卡
+        - docker0
+        - veth.*
+        - VM.*
+      preferredNetworks:  ## 优先的网段
+        - 172.20
+  security:
+    user:
+      name: test
+      password: 123456

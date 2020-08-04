@@ -48,7 +48,7 @@ class SingleConsumerController {
         this.helloService = helloService;
     }
 
-    @RequestMapping(value = "feignRequest")
+    @RequestMapping(value = "/feignRequest")
     public Object feignRequest() {
         return helloService.echoHello();
     }

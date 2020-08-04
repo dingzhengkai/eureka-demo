@@ -31,7 +31,7 @@ class ServiceProviderRestController {
 
     @RequestMapping(value = {"/", "/hello"})
     public String echoHello() {
-        return "Hello";
+        return "Hello provider1";
     }
 
     @RequestMapping("/service-instances/{applicationName}")
