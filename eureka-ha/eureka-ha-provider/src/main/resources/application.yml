@@ -1,0 +1,43 @@
+spring:
+  profiles: ha-provider1
+  application:
+    name: ha-provider
+  cloud:
+    inetutils: ## 网卡设置
+      ignoredInterfaces:  ## 忽略的网卡
+        - docker0
+        - veth.*
+        - VM.*
+      preferredNetworks:  ## 优先的网段
+        - 172.20
+server:
+  port: 3001
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+
+
+---
+spring:
+  profiles: ha-provider2
+  application:
+    name: ha-provider
+  cloud:
+    inetutils: ## 网卡设置
+      ignoredInterfaces:  ## 忽略的网卡
+        - docker0
+        - veth.*
+        - VM.*
+      preferredNetworks:  ## 优先的网段
+        - 172.20
+server:
+  port: 3002
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka

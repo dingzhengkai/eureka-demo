@@ -1,0 +1,34 @@
+spring:
+  profiles: eureka-center1
+server:
+  port: 1001
+eureka:
+  instance:
+    hostname: ha-eureak-center1
+    appname: 注册中心
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:1002/eureka
+
+
+---
+spring:
+  profiles: eureka-center2
+server:
+  port: 1002
+eureka:
+  instance:
+    hostname: ha-eureak-center2
+    appname: 注册中心
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:1001/eureka
+
+
+
