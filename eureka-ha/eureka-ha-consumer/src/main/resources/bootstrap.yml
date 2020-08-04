@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ha-customer
+    name: ha-consumer
   cloud:
     inetutils: ## 网卡设置
       ignoredInterfaces:  ## 忽略的网卡

@@ -1,6 +1,6 @@
-package com.example.eureak.ha.customer.controller;
+package com.example.eureak.ha.consumer.controller;
 
-import com.example.eureak.ha.customer.service.IHelloService;
+import com.example.eureak.ha.consumer.service.IHelloService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;

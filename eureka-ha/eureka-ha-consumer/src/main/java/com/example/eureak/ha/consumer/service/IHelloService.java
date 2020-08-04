@@ -1,4 +1,4 @@
-package com.example.eureak.ha.customer.service;
+package com.example.eureak.ha.consumer.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

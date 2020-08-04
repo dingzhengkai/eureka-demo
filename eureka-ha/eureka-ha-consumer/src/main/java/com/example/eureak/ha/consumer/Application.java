@@ -1,4 +1,4 @@
-package com.example.eureak.ha.customer;
+package com.example.eureak.ha.consumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

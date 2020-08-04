@@ -15,7 +15,7 @@
     <modules>
         <module>eureka-ha-server</module>
         <module>eureka-ha-provider</module>
-        <module>eureka-ha-customer</module>
+        <module>eureka-ha-consumer</module>
     </modules>
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
