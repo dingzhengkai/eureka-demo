@@ -11,13 +11,13 @@ spring:
       preferredNetworks:  ## 优先的网段
         - 172.20
 server:
-  port: 3001
+  port: 40001
 eureka:
   instance:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+      defaultZone: http://localhost:30001/eureka,http://localhost:30002/eureka
 
 
 ---
@@ -34,10 +34,10 @@ spring:
       preferredNetworks:  ## 优先的网段
         - 172.20
 server:
-  port: 3002
+  port: 40002
 eureka:
   instance:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:1001/eureka,http://localhost:1002/eureka
+      defaultZone: http://localhost:30001/eureka,http://localhost:30002/eureka

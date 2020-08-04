@@ -1,7 +1,7 @@
 spring:
   profiles: eureka-center1
 server:
-  port: 1001
+  port: 30001
 eureka:
   instance:
     hostname: ha-eureak-center1
@@ -11,14 +11,14 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:1002/eureka
+      defaultZone: http://localhost:30002/eureka
 
 
 ---
 spring:
   profiles: eureka-center2
 server:
-  port: 1002
+  port: 30002
 eureka:
   instance:
     hostname: ha-eureak-center2
@@ -28,7 +28,7 @@ eureka:
     registerWithEureka: true
     fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:1001/eureka
+      defaultZone: http://localhost:30001/eureka
 
 
 
