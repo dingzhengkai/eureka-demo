@@ -38,3 +38,10 @@ eureka:
     enableSelfPreservation: true # 是否关闭自我保护模式
     renewalPercentThreshold: 0.4 # 降低实例心跳量检测，本机测试实例少时使用
 #    evictionIntervalTimerInMs: 4000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      # base-path: "/monitor"
+      base-path: "/actuator"
